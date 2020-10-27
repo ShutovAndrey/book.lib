@@ -1,0 +1,55 @@
+*{
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-family: 'PT Sans Caption', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+table {
+    border-collapse: collapse;
+}
+td, th {
+    padding: 1em;
+    line-height: 1;
+}
+tr:nth-child(even) {background: #CCC}
+tr:nth-child(odd) {background: #FFF}
+input{
+    margin:1em 0 1em 0;
+    padding: 0.5em;
+}
+select{
+    padding: 0.5em;
+    width: 100%;
+    margin: 1em 0 1em 0;
+}
+button{
+    display: block;
+}
+
+.main-table{
+    text-align: left;
+}
+
+.container{
+}
+
+.radius {
+    padding:1em;
+
+}
+
+.edit-btn{
+    width:100%;
+    font-weight:300;
+    background-color:#CCC;
+    border: none;
+    transition: transform .2s;
+}
+.edit-btn:hover{
+    background-color:#808080;
+    color: #CCC;
+    transform: scale(1.03);
+
+}
