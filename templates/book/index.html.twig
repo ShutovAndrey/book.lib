@@ -1,0 +1,47 @@
+{% extends 'layouts/main.html.twig' %}
+
+{% block title %}Список книг{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <table class="main-table">
+            <caption><h3>Список книг</h3></caption>
+            <thead>
+            <tr>
+                <th>Автор</th>
+                <th>Название</th>
+                <th>Год</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for book in books %}
+                <tr>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.year }}</td>
+                    <td>
+
+                        <form action="{{ path('book_edit', {'id': book.id}) }}">
+                            <button class="btn">Редактировать</button>
+                        </form>
+
+                        <form method="post" action="{{ path('book_delete', {'id': book.id}) }}">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ book.id) }}">
+                            <button class="btn">Удалить</button>
+                        </form>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <button class="add-book radius" onclick="window.location.href = '{{ path('book_new') }}';">Добавить новую книгу</button>
+
+    </div>
+{% endblock %}
