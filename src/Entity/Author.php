@@ -85,7 +85,7 @@ class Author
      * Generates the magic method
      *
      */
-    public function __toString():string
+    public function __toString() : ?string
     {
         return $this->name;
 
