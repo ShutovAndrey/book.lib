@@ -1,4 +1,9 @@
 {{ form_start(form) }}
+    {% form_theme form 'book/fields.html.twig' %}
+<div class="form-group">
     {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Сохранить') }}</button>
+</div>
+{% block body %}{% endblock %}
+    <button class="btn btn-success save">{{ button_label|default('Сохранить') }}</button>
 {{ form_end(form) }}
+

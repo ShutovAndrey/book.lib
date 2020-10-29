@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+
 class BookType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options) :void
@@ -15,6 +16,7 @@ class BookType extends AbstractType
             ->add('title')
             ->add('year')
             ->add('author')
+
         ;
     }
 
