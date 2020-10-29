@@ -20,8 +20,6 @@ DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"
 ```
 then run these commands
 ```
-php bin/console make:migration
-
 php bin/console doctrine:migrations:migrate
 ```
 use your server parameters or use web symfony server
