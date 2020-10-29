@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 class AuthorsController  extends AbstractController
 {
 
-    public function createAuthor($newAuthor): Author
+    public function createAuthor(object $newAuthor): Author
     {
         $author = new Author();
         $author->setName($newAuthor);

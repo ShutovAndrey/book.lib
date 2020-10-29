@@ -82,7 +82,7 @@ class BookController extends AbstractController
         return $this->redirectToRoute('book_index');
     }
 
-    private function checking($request, $book, $authorRepository, $authorsController): void
+    private function checking(object $request, object $book, object $authorRepository, object $authorsController): void
     {
         $requestAuthor = $request->get('author');
         $newAuthor = $authorRepository->findOneBy(['name' => $requestAuthor]);
