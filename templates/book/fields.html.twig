@@ -1,0 +1,31 @@
+{% block choice_widget %}
+    {%- set options = choices -%}
+    <div class="choise-widget">
+        <input class="form-control" type="text" id="book_newAuthor" name="author" list="author"/>
+        <datalist id="author">
+            {% for option in options %}
+
+                <option>{{ option.label }}</option>
+            {% endfor %}
+        </datalist>
+    </div>
+{% endblock %}
+
+{% block text_widget %}
+    <div class="text-widget">
+        {% set type = type|default('text') %}
+        {{ block('form_widget_simple') }}
+    </div>
+{% endblock %}
+
+{%- block form_widget_simple -%}
+    {%- set type = type|default('text') -%}
+    {%- if type == 'range' or type == 'color' -%}
+        {# Attribute "required" is not supported #}
+        {%- set required = false -%}
+    {%- endif -%}
+    <input class="form-control"
+           type="{{ type }}" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}/>
+{%- endblock form_widget_simple -%}
+
+

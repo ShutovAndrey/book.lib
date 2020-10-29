@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\AuthorRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use App\Controller\AuthorsController;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -85,7 +86,8 @@ class Author
      * Generates the magic method
      *
      */
-    public function __toString(){
+    public function __toString(): ?string
+    {
         return $this->name;
 
     }

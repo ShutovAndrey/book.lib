@@ -44,6 +44,7 @@ class Book
      */
     private $author;
 
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,10 +75,10 @@ class Book
     }
 
     public function getAuthor(): ?Author
-    {
+{
 
-        return $this->author;
-    }
+    return $this->author;
+}
 
     public function setAuthor(?Author $author): self
     {
@@ -85,4 +86,5 @@ class Book
 
         return $this;
     }
+
 }

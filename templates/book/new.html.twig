@@ -3,22 +3,22 @@
 {% block title %}New Book{% endblock %}
 
 {% block body %}
-{% if book.id %}
-    <h1>Изменение книги</h1>
+    {% if book.id %}
+        <h1>Изменение книги</h1>
     {% else %}
-     <h1>создание книги</h1>
-{% endif %}
-    
+        <h1>создание книги</h1>
+    {% endif %}
 
     {{ include('book/_form.html.twig') }}
 
     {% if book.id %}
- <form method="post" action="{{ path('book_delete', {'id': book.id}) }}">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ book.id) }}">
-    <button class="btn">Удалить</button>
-</form>
-{% endif %}
-
-    <a href="{{ path('book_index') }}">К списку книг</a>
+        <form method="post" action="{{ path('book_delete', {'id': book.id}) }}">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ book.id) }}">
+            <button class="btn btn-dark">Удалить</button>
+        </form>
+    {% endif %}
+    <form action="{{ path('book_index') }}">
+        <button class="btn btn-secondary">К списку книг</button>
+    </form>
 {% endblock %}
